@@ -3,8 +3,15 @@ var paused = true;
 var traceButton;
 var trace = false;
 
+var globalWidth;
+var globalHeight;
+
 function setup(){
-  createCanvas(windowWidth - 20, windowHeight - 20);
+  createCanvas(windowWidth, windowHeight);
+  
+  globalWidth = windowWidth;
+  globalHeight = windowHeight;
+  
   background(0);
 
   pauseButton = createButton("Play");
@@ -27,6 +34,7 @@ function draw(){
   DrawBackground();
   drawAllObjects();
   drawAllTracePoints();
+  drawMaterialView();
   // drawCurrentObject();
   removeObjects();
 }// End of draw Function 
@@ -51,4 +59,12 @@ function getPauseState(){
 
 function getTraceState(){
   return trace;
+}
+
+function getGlobalWidth(){
+  return globalWidth;
+}
+
+function getGlobalHeight(){
+  return globalHeight;
 }

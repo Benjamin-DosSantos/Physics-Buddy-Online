@@ -7,8 +7,11 @@ function keyPressed(){
 		// T toggles the visibility of traces 
 		case 84:
 			swapTrace();
-			break; 
+			break;
+		// M Opens the material view 
+		case 77:
+			toggleMaterialView();
+			break;
 	}
-
-	console.log(keyCode);
+	return false;
 }
